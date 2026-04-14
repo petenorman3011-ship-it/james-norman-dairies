@@ -10,24 +10,46 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background: #fff; color: #1a1a2e; }
 
+    /* HEADER BANNER */
+    .header-banner {
+      background: #1a3a6e;
+      background: linear-gradient(135deg, #0d2550 0%, #1a3f7a 50%, #0d2550 100%);
+      padding: 28px 60px 24px;
+      text-align: center;
+      border-bottom: 4px solid #2a5caa;
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .banner-title {
+      font-size: clamp(32px, 5vw, 58px); font-weight: 900;
+      color: #ffffff; letter-spacing: 2px;
+      text-transform: uppercase; line-height: 1;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .banner-subtitle {
+      font-size: clamp(14px, 2vw, 22px); font-weight: 400;
+      color: #c8d8f0; letter-spacing: 4px;
+      text-transform: uppercase; margin-top: 6px;
+    }
     /* NAV */
     nav {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 20px 60px; border-bottom: 1px solid #e8f0fe;
-      position: sticky; top: 0; background: rgba(255,255,255,0.97);
-      backdrop-filter: blur(12px); z-index: 100; box-shadow: 0 1px 12px rgba(30,80,180,0.06);
+      display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 4px;
+      padding: 0 40px;
+      background: #122d5e;
+      border-bottom: 1px solid #1a3f7a;
+      z-index: 99;
     }
-    .logo { display: flex; align-items: center; gap: 12px; }
-    .logo-icon { width: 42px; height: 42px; background: #1a56db; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; }
-    .logo-text { font-size: 18px; font-weight: 800; color: #1a1a2e; letter-spacing: -0.5px; }
-    .logo-text span { color: #1a56db; }
-    .nav-links a { color: #555; text-decoration: none; margin-left: 32px; font-size: 14px; font-weight: 500; transition: color 0.2s; }
-    .nav-links a:hover { color: #1a56db; }
+    .logo { display: none; }
+    .logo-text { display: none; }
+    .nav-links { display: flex; flex-wrap: wrap; justify-content: center; }
+    .nav-links a { color: #c8d8f0; text-decoration: none; padding: 14px 20px; font-size: 14px; font-weight: 500; transition: all 0.2s; border-bottom: 3px solid transparent; display: block; }
+    .nav-links a:hover { color: #fff; border-bottom-color: #fff; }
     .nav-cta {
-      background: #1a56db; color: #fff !important; padding: 10px 22px;
-      border-radius: 8px; font-weight: 600; font-size: 14px;
+      background: transparent !important; color: #fff !important;
+      border-bottom: 3px solid #fff !important;
+      font-weight: 700 !important;
     }
-    .nav-cta:hover { background: #1447c0 !important; }
+    .nav-cta:hover { background: rgba(255,255,255,0.1) !important; }
 
     /* HERO */
     .hero {
@@ -194,12 +216,14 @@
 </head>
 <body>
 
+<!-- HEADER BANNER -->
+<div class="header-banner">
+  <div class="banner-title">James Norman</div>
+  <div class="banner-subtitle">Milktech Ltd</div>
+</div>
+
 <!-- NAV -->
 <nav>
-  <div class="logo">
-    <div class="logo-icon">🥛</div>
-    <div class="logo-text">James Norman <span>Milktech Ltd</span></div>
-  </div>
   <div class="nav-links">
     <a href="#products">Products</a>
     <a href="#how-it-works">How to Order</a>
