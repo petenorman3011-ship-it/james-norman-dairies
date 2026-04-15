@@ -54,9 +54,14 @@
     /* HERO */
     .hero {
       padding: 110px 20px 90px; text-align: center;
-      background: linear-gradient(160deg, #f0f5ff 0%, #ffffff 60%);
+      background: linear-gradient(160deg, rgba(10,30,80,0.72) 0%, rgba(10,30,80,0.55) 100%),
+        url('cow.jpg') center center / cover no-repeat;
       border-bottom: 1px solid #e8f0fe;
+      position: relative;
     }
+    .hero .hero-badge { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); color: #fff; }
+    .hero h1 { color: #fff; }
+    .hero p { color: rgba(255,255,255,0.85); }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
       background: #e8f0fe; border: 1px solid #c3d6f9; color: #1a56db;
@@ -248,6 +253,34 @@
   </div>
   <div style="margin-top:60px; border-radius:20px; overflow:hidden; max-width:860px; margin-left:auto; margin-right:auto; box-shadow:0 20px 60px rgba(26,86,219,0.15); border:2px solid #e8f0fe;">
     <img src="van.jpg" alt="James Norman Milktech Ltd delivery van" style="width:100%; display:block;"/>
+  </div>
+</div>
+
+<!-- PARTNERS -->
+<div style="background:#fff; border-bottom:1px solid #e8f0fe; padding:40px 20px;">
+  <p style="text-align:center; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:#aaa; margin-bottom:32px;">Our trusted supply partners</p>
+  <div style="display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:48px;">
+
+    <div style="text-align:center;">
+      <div style="display:inline-flex; align-items:center; gap:10px; background:#f0f7ff; border:2px solid #c3d6f9; border-radius:14px; padding:16px 32px;">
+        <span style="font-size:28px;">🥛</span>
+        <div style="text-align:left;">
+          <div style="font-size:18px; font-weight:900; color:#1a3a6e; letter-spacing:-0.5px;">Dales</div>
+          <div style="font-size:12px; font-weight:600; color:#1a56db; text-transform:uppercase; letter-spacing:1px;">Dairies</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;">
+      <div style="display:inline-flex; align-items:center; gap:10px; background:#f0f7ff; border:2px solid #c3d6f9; border-radius:14px; padding:16px 32px;">
+        <span style="font-size:28px;">🐄</span>
+        <div style="text-align:left;">
+          <div style="font-size:18px; font-weight:900; color:#1a3a6e; letter-spacing:-0.5px;">Lanchester</div>
+          <div style="font-size:12px; font-weight:600; color:#1a56db; text-transform:uppercase; letter-spacing:1px;">Dairies</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
