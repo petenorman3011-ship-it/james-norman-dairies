@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us — James Norman Milktech Ltd</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #fff; color: #1a1a2e; }
+
+    /* HEADER BANNER */
+    .header-banner {
+      background: linear-gradient(135deg, #0d2550 0%, #1a3f7a 50%, #0d2550 100%);
+      padding: 28px 60px 24px; text-align: center;
+      border-bottom: 4px solid #2a5caa;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .banner-title { font-size: clamp(32px, 5vw, 58px); font-weight: 900; color: #fff; letter-spacing: 2px; text-transform: uppercase; line-height: 1; }
+    .banner-subtitle { font-size: clamp(14px, 2vw, 22px); font-weight: 400; color: #c8d8f0; letter-spacing: 4px; text-transform: uppercase; margin-top: 6px; }
+
+    /* NAV */
+    nav {
+      display: flex; justify-content: center; align-items: center; flex-wrap: wrap;
+      padding: 0 40px; background: #122d5e; border-bottom: 1px solid #1a3f7a;
+    }
+    nav a { color: #c8d8f0; text-decoration: none; padding: 14px 20px; font-size: 14px; font-weight: 500; transition: all 0.2s; border-bottom: 3px solid transparent; display: block; }
+    nav a:hover { color: #fff; border-bottom-color: #fff; }
+    nav a.active { color: #fff; border-bottom-color: #fff; font-weight: 700; }
+
+    /* HERO */
+    .about-hero {
+      background: linear-gradient(160deg, rgba(10,30,80,0.75) 0%, rgba(10,30,80,0.6) 100%),
+        url('cow.jpg') center center / cover no-repeat;
+      padding: 100px 20px; text-align: center;
+      border-bottom: 1px solid #e8f0fe;
+    }
+    .about-hero h1 { font-size: clamp(32px, 5vw, 60px); font-weight: 900; color: #fff; letter-spacing: -2px; margin-bottom: 16px; }
+    .about-hero p { font-size: 18px; color: rgba(255,255,255,0.85); max-width: 600px; margin: 0 auto; line-height: 1.7; }
+
+    /* SECTION */
+    .section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; }
+    .section-label { color: #1a56db; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+    .section-title { font-size: clamp(26px, 4vw, 44px); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 20px; color: #1a1a2e; }
+
+    /* TIMELINE */
+    .timeline { position: relative; padding: 20px 0; }
+    .timeline::before { content: ''; position: absolute; left: 50%; transform: translateX(-50%); top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, #1a56db, #0d2550); border-radius: 2px; }
+    .timeline-item { display: flex; justify-content: flex-end; padding-right: calc(50% + 40px); margin-bottom: 56px; position: relative; }
+    .timeline-item:nth-child(even) { justify-content: flex-start; padding-right: 0; padding-left: calc(50% + 40px); }
+    .timeline-dot { position: absolute; left: 50%; transform: translateX(-50%); width: 52px; height: 52px; background: #1a56db; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; border: 4px solid #fff; box-shadow: 0 4px 12px rgba(26,86,219,0.3); z-index: 1; top: 0; }
+    .timeline-content { background: #f7faff; border: 1.5px solid #e8f0fe; border-radius: 16px; padding: 28px; max-width: 380px; }
+    .timeline-content:hover { border-color: #1a56db; box-shadow: 0 8px 24px rgba(26,86,219,0.08); }
+    .timeline-year { font-size: 13px; font-weight: 700; color: #1a56db; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .timeline-content h3 { font-size: 18px; font-weight: 800; margin-bottom: 10px; color: #1a1a2e; }
+    .timeline-content p { color: #666; font-size: 14px; line-height: 1.7; }
+
+    /* GENERATION CARDS */
+    .gen-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 48px; }
+    .gen-card { background: #f7faff; border: 1.5px solid #e8f0fe; border-radius: 16px; padding: 28px; text-align: center; transition: border-color 0.2s, transform 0.2s; }
+    .gen-card:hover { border-color: #1a56db; transform: translateY(-3px); }
+    .gen-icon { font-size: 36px; margin-bottom: 14px; }
+    .gen-num { font-size: 13px; font-weight: 700; color: #1a56db; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+    .gen-card h3 { font-size: 16px; font-weight: 800; margin-bottom: 8px; }
+    .gen-card p { color: #777; font-size: 13px; line-height: 1.6; }
+
+    /* VALUES */
+    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .value-card { display: flex; align-items: flex-start; gap: 16px; background: #fff; border: 1.5px solid #e8f0fe; border-radius: 14px; padding: 24px; }
+    .value-icon { font-size: 28px; flex-shrink: 0; }
+    .value-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .value-card p { font-size: 13px; color: #777; line-height: 1.6; }
+
+    /* QUOTE */
+    .quote-section { background: linear-gradient(135deg, #0d2550 0%, #1a3f7a 100%); padding: 80px 20px; text-align: center; }
+    .quote-section blockquote { font-size: clamp(20px, 3vw, 32px); font-weight: 700; color: #fff; max-width: 760px; margin: 0 auto 24px; line-height: 1.5; letter-spacing: -0.5px; font-style: italic; }
+    .quote-section cite { color: rgba(255,255,255,0.6); font-size: 15px; font-style: normal; }
+
+    /* CTA */
+    .cta-section { text-align: center; padding: 80px 20px; background: #f7faff; border-top: 1px solid #e8f0fe; }
+    .cta-section h2 { font-size: clamp(26px, 4vw, 44px); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 16px; }
+    .cta-section p { color: #777; font-size: 16px; margin-bottom: 36px; }
+    .btn-whatsapp { background: #25d366; color: #fff; padding: 16px 36px; border-radius: 10px; font-size: 16px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s; }
+    .btn-whatsapp:hover { background: #1fba59; }
+    .btn-ghost { background: transparent; color: #1a1a2e; padding: 16px 36px; border-radius: 10px; font-size: 16px; font-weight: 600; text-decoration: none; border: 1.5px solid #d0d9f0; margin-left: 12px; transition: border-color 0.2s; }
+    .btn-ghost:hover { border-color: #1a56db; color: #1a56db; }
+
+    /* FOOTER */
+    footer { background: #1a1a2e; padding: 40px 60px 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+    footer p { color: #444; font-size: 13px; }
+    .footer-logo { font-size: 16px; font-weight: 800; color: #fff; }
+    .footer-logo span { color: #1a56db; }
+
+    @media (max-width: 700px) {
+      .header-banner { padding: 24px 20px; }
+      .timeline::before { left: 24px; }
+      .timeline-item { padding-right: 0; padding-left: 70px; justify-content: flex-start; }
+      .timeline-item:nth-child(even) { padding-left: 70px; }
+      .timeline-dot { left: 24px; }
+      .timeline-content { max-width: 100%; }
+      nav { padding: 0 10px; }
+      footer { padding: 32px 20px; flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER BANNER -->
+<div class="header-banner">
+  <div class="banner-title">James Norman</div>
+  <div class="banner-subtitle">Milktech Ltd</div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html">Home</a>
+  <a href="index.html#products">Products</a>
+  <a href="index.html#how-it-works">How to Order</a>
+  <a href="index.html#who-we-serve">Who We Serve</a>
+  <a href="about.html" class="active">About Us</a>
+  <a href="index.html#feedback">Reviews</a>
+  <a href="index.html#contact">Get in Touch</a>
+</nav>
+
+<!-- HERO -->
+<div class="about-hero">
+  <h1>Over 100 years of dairy</h1>
+  <p>Four generations. One family. A century of fresh milk delivered with pride across the North East.</p>
+</div>
+
+<!-- OUR STORY -->
+<div style="border-bottom: 1px solid #e8f0fe;">
+  <div class="section">
+    <div class="section-label">Our story</div>
+    <div class="section-title">From doorstep to wholesale — a 100 year journey</div>
+    <p style="color:#555; font-size:17px; line-height:1.8; max-width:780px; margin-bottom:20px;">
+      The Norman family has been delivering fresh dairy to the people of the North East for over a century. What started as a humble doorstep milk round — waking before dawn to ensure every household had fresh milk — has grown into one of the region's most trusted wholesale dairy operations.
+    </p>
+    <p style="color:#555; font-size:17px; line-height:1.8; max-width:780px;">
+      Through four generations, the commitment has never changed: <strong>fresh, quality dairy, delivered reliably, every single day.</strong> The methods have evolved, the scale has grown, but the values remain exactly as they were when it all began.
+    </p>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<div style="background:#f7faff; border-bottom: 1px solid #e8f0fe;">
+  <div class="section">
+    <div class="section-label">Our history</div>
+    <div class="section-title">A century in the making</div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot">🥛</div>
+        <div class="timeline-content">
+          <div class="timeline-year">1920s — 1st Generation</div>
+          <h3>The doorstep round begins</h3>
+          <p>The Norman family starts delivering fresh milk door-to-door across local streets in the North East. Up before sunrise every morning, glass bottles clinked on doorsteps before households woke.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">🐄</div>
+        <div class="timeline-content">
+          <div class="timeline-year">1950s — 2nd Generation</div>
+          <h3>Growing the round</h3>
+          <p>The second generation takes the reins, expanding the milk round to serve more streets and communities. The family builds a reputation for reliability that neighbours pass on by word of mouth.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">🚚</div>
+        <div class="timeline-content">
+          <div class="timeline-year">1980s — 3rd Generation</div>
+          <h3>From rounds to routes</h3>
+          <p>The third generation modernises the operation — swapping milk floats for vans and beginning to serve local businesses. The first cafés, corner shops and restaurants come on board.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">🏢</div>
+        <div class="timeline-content">
+          <div class="timeline-year">2000s — 4th Generation</div>
+          <h3>Wholesale expansion</h3>
+          <p>James Norman takes over the family business and drives a major expansion into wholesale. Hotels, care homes, restaurants and supermarkets across the North East join a growing portfolio of customers.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">📱</div>
+        <div class="timeline-content">
+          <div class="timeline-year">Today</div>
+          <h3>Modern dairy, family values</h3>
+          <p>James Norman Milktech Ltd now serves hundreds of businesses across the region. Ordering is simpler than ever via WhatsApp — but the commitment to fresh, quality dairy delivered on time hasn't changed one bit.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- 4 GENERATIONS -->
+<div style="border-bottom: 1px solid #e8f0fe;">
+  <div class="section">
+    <div class="section-label">The Norman family</div>
+    <div class="section-title">Four generations of dairy</div>
+    <p style="color:#777; font-size:16px; line-height:1.7; max-width:560px;">Every generation has built on what came before — passing down not just a business, but a work ethic, a set of values, and a genuine pride in what they do.</p>
+    <div class="gen-grid">
+      <div class="gen-card">
+        <div class="gen-icon">👴</div>
+        <div class="gen-num">1st Generation</div>
+        <h3>The Founder</h3>
+        <p>Started the doorstep milk round in the 1920s. Built the family's reputation one bottle at a time.</p>
+      </div>
+      <div class="gen-card">
+        <div class="gen-icon">👨‍🦳</div>
+        <div class="gen-num">2nd Generation</div>
+        <h3>Growing the Round</h3>
+        <p>Expanded across the community throughout the 1950s, turning a small round into a proper local institution.</p>
+      </div>
+      <div class="gen-card">
+        <div class="gen-icon">👨</div>
+        <div class="gen-num">3rd Generation</div>
+        <h3>Into Business</h3>
+        <p>Modernised the operation in the 1980s and opened the doors to commercial customers for the first time.</p>
+      </div>
+      <div class="gen-card">
+        <div class="gen-icon">👨‍🌾</div>
+        <div class="gen-num">4th Generation</div>
+        <h3>James Norman</h3>
+        <p>Today's owner. Grew the business into a full wholesale operation serving hundreds of businesses across the North East.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- QUOTE -->
+<div class="quote-section">
+  <blockquote>"Fresh dairy, delivered with pride. That's what this family has done for over 100 years — and it's what we'll keep doing."</blockquote>
+  <cite>— James Norman, 4th Generation, James Norman Milktech Ltd</cite>
+</div>
+
+<!-- VALUES -->
+<div style="border-bottom: 1px solid #e8f0fe;">
+  <div class="section">
+    <div class="section-label">What we stand for</div>
+    <div class="section-title">Built on values, not just business</div>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">⏰</div>
+        <div>
+          <h3>Reliability</h3>
+          <p>Four generations of waking before the sun rises. We've never let a customer down and we don't plan to start.</p>
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🥛</div>
+        <div>
+          <h3>Quality</h3>
+          <p>We only supply dairy we'd be proud to put on our own table. Fresh, quality-assured, every single delivery.</p>
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <div>
+          <h3>Trust</h3>
+          <p>Our customers know us by name. Many have been with us for years. That trust is everything to us.</p>
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">📍</div>
+        <div>
+          <h3>Local roots</h3>
+          <p>North East born and bred. We're proud to support local businesses because we've always been one ourselves.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>Want to work with us?</h2>
+  <p>Join the hundreds of businesses across the North East who trust James Norman Milktech for their daily dairy.</p>
+  <a href="https://wa.me/447739285173?text=Hi%2C%20I%27d%20like%20to%20set%20up%20a%20wholesale%20account" class="btn-whatsapp">📱 Order on WhatsApp</a>
+  <a href="index.html#contact" class="btn-ghost">Send us an enquiry</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">James Norman <span>Milktech Ltd</span></div>
+  <p>© 2026 James Norman Milktech Ltd. All rights reserved.</p>
+  <p>📞 07739 285 173</p>
+</footer>
+
+</body>
+</html>
