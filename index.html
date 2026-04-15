@@ -12,25 +12,25 @@
 
     /* HEADER BANNER */
     .header-banner {
-      background: #1a3a6e;
       background: linear-gradient(135deg, #0d2550 0%, #1a3f7a 50%, #0d2550 100%);
-      padding: 28px 60px 24px;
-      text-align: center;
+      padding: 16px 40px;
+      display: flex; align-items: center; gap: 24px;
       border-bottom: 4px solid #2a5caa;
       position: sticky; top: 0; z-index: 100;
       box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
     .banner-title {
-      font-size: clamp(32px, 5vw, 58px); font-weight: 900;
+      font-size: clamp(24px, 4vw, 48px); font-weight: 900;
       color: #ffffff; letter-spacing: 2px;
       text-transform: uppercase; line-height: 1;
       text-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
     .banner-subtitle {
-      font-size: clamp(14px, 2vw, 22px); font-weight: 400;
-      color: #c8d8f0; letter-spacing: 4px;
+      font-size: clamp(12px, 1.5vw, 18px); font-weight: 400;
+      color: #c8d8f0; letter-spacing: 3px;
       text-transform: uppercase; margin-top: 6px;
     }
+    .banner-text { text-align: left; }
     /* NAV */
     nav {
       display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 4px;
@@ -224,8 +224,11 @@
 
 <!-- HEADER BANNER -->
 <div class="header-banner">
-  <img src="logo.jpg" alt="James Norman Dairy Products" style="height:160px; width:160px; object-fit:cover; border-radius:50%; border:4px solid rgba(255,255,255,0.5); margin-bottom:10px; box-shadow:0 4px 24px rgba(0,0,0,0.4);"/>
-  <div class="banner-subtitle" style="margin-top:4px;">Milktech Ltd &nbsp;·&nbsp; Specialists in Dairy Produce</div>
+  <img src="logo.jpg" alt="James Norman Dairy Products" style="height:90px; width:90px; object-fit:cover; border-radius:50%; border:3px solid rgba(255,255,255,0.5); box-shadow:0 4px 16px rgba(0,0,0,0.4); flex-shrink:0;"/>
+  <div class="banner-text">
+    <div class="banner-title">James Norman</div>
+    <div class="banner-subtitle">Milktech Ltd &nbsp;·&nbsp; Specialists in Dairy Produce</div>
+  </div>
 </div>
 
 <!-- NAV -->
